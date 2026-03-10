@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abishek G R | SQL Developer</title>
+
+<style>
+
+:root{
+--bg:#111;
+--card:#1e1e1e;
+--text:white;
+--accent:#00adb5;
+}
+
+.light{
+--bg:#f4f4f4;
+--card:white;
+--text:black;
+}
+
+body{
+margin:0;
+font-family:Arial;
+background:var(--bg);
+color:var(--text);
+transition:0.3s;
+}
+
+header{
+text-align:center;
+padding:50px;
+animation:fade 1.5s;
+}
+
+nav{
+text-align:center;
+padding:10px;
+}
+
+nav a{
+margin:15px;
+text-decoration:none;
+color:var(--accent);
+font-weight:bold;
+}
+
+section{
+padding:60px 10%;
+}
+
+.card{
+background:var(--card);
+padding:25px;
+border-radius:10px;
+margin-top:20px;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+animation:slide 1s;
+}
+
+.skills{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:20px;
+}
+
+.bar{
+background:#444;
+border-radius:20px;
+overflow:hidden;
+}
+
+.bar span{
+display:block;
+padding:5px;
+background:var(--accent);
+}
+
+button{
+padding:10px 20px;
+background:var(--accent);
+border:none;
+border-radius:5px;
+cursor:pointer;
+color:white;
+}
+
+input,textarea{
+width:100%;
+padding:10px;
+margin-top:10px;
+border-radius:5px;
+border:none;
+}
+
+footer{
+text-align:center;
+padding:20px;
+margin-top:40px;
+}
+
+.sqlbox{
+background:black;
+color:#0f0;
+padding:15px;
+font-family:monospace;
+}
+
+@keyframes fade{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+@keyframes slide{
+from{transform:translateY(30px);opacity:0;}
+to{transform:translateY(0);opacity:1;}
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Abishek G R</h1>
+<h2>SQL Developer Portfolio</h2>
+<p>Aspiring Data Analyst & SQL Developer</p>
+
+<button onclick="toggleMode()">Toggle Dark/Light</button>
+<br><br>
+
+<a href="resume.pdf">
+<button>Download Resume</button>
+</a>
+
+</header>
+
+<nav>
+
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#github">GitHub</a>
+<a href="#contact">Contact</a>
+
+</nav>
+
+<section id="about">
+
+<h2>About Me</h2>
+
+<div class="card">
+
+<p>
+I am an Artificial Intelligence and Data Science student passionate about
+data analysis and SQL database development.
+</p>
+
+<p>
+I enjoy working with data, designing databases, and discovering insights
+through SQL queries and analytics.
+</p>
+
+</div>
+
+</section>
+
+<section id="skills">
+
+<h2>Skills</h2>
+
+<div class="skills">
+
+<div class="card">
+SQL
+<div class="bar"><span style="width:85%">85%</span></div>
+</div>
+
+<div class="card">
+Python
+<div class="bar"><span style="width:80%">80%</span></div>
+</div>
+
+<div class="card">
+Database Design
+<div class="bar"><span style="width:75%">75%</span></div>
+</div>
+
+<div class="card">
+Data Analysis
+<div class="bar"><span style="width:78%">78%</span></div>
+</div>
+
+</div>
+
+</section>
+
+<section id="projects">
+
+<h2>SQL Projects</h2>
+
+<div class="card">
+
+<h3>Student Database System</h3>
+
+<p>Designed relational tables to manage student records and analyze marks.</p>
+
+<div class="sqlbox">
+
+SELECT student_id, AVG(score)
+FROM marks
+GROUP BY student_id;
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Online Store Sales Analysis</h3>
+
+<p>Analyzed product sales and calculated revenue using SQL joins.</p>
+
+<div class="sqlbox">
+
+SELECT product_name,
+SUM(quantity)
+FROM products
+JOIN orders
+ON products.id = orders.product_id
+GROUP BY product_name;
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Employee Salary Analysis</h3>
+
+<p>Analyzed company salary distribution and department statistics.</p>
+
+<div class="sqlbox">
+
+SELECT department,
+AVG(salary)
+FROM employees
+GROUP BY department;
+
+</div>
+
+</div>
+
+</section>
+
+<section id="github">
+
+<h2>GitHub</h2>
+
+<div class="card">
+
+<p>View my SQL and Data Analytics projects on GitHub.</p>
+
+<a href="https://github.com/yourusername" target="_blank">
+
+<button>Visit GitHub</button>
+
+</a>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2>Contact Me</h2>
+
+<div class="card">
+
+<form onsubmit="sendMsg();return false;">
+
+<input type="text" placeholder="Your Name" required>
+
+<input type="email" placeholder="Your Email" required>
+
+<textarea placeholder="Message"></textarea>
+
+<br><br>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>© 2026 Abishek G R | SQL Developer Portfolio</p>
+
+</footer>
+
+<script>
+
+function toggleMode(){
+document.body.classList.toggle("light");
+}
+
+function sendMsg(){
+alert("Message sent successfully!");
+}
+
+</script>
+
+</body>
+</html>
