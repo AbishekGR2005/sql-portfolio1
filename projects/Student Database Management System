@@ -1,0 +1,29 @@
+CREATE DATABASE StudentDB;
+
+USE StudentDB;
+
+CREATE TABLE Students (
+    student_id INT PRIMARY KEY,
+    name VARCHAR(50),
+    department VARCHAR(50),
+    age INT
+);
+
+CREATE TABLE Marks (
+    mark_id INT PRIMARY KEY,
+    student_id INT,
+    subject VARCHAR(50),
+    score INT,
+    FOREIGN KEY (student_id) REFERENCES Students(student_id)
+);
+
+INSERT INTO Students VALUES
+(1,'Arun','AI & DS',20),
+(2,'Priya','CSE',21),
+(3,'Rahul','IT',20);
+
+INSERT INTO Marks VALUES
+(1,1,'Python',85),
+(2,1,'SQL',78),
+(3,2,'Python',92),
+(4,3,'SQL',75);
